@@ -144,7 +144,7 @@ It does not attempt to determine whether activity is benign or malicious, and it
    fi
  fi
 
-+# New potentially malicious persistence entry
++# New persistence entry
 
  # Enables autocompletion of options for bashfuscator
  #eval "$(/home/towelie/.local/bin/register-python-argcomplete bashfuscator)"
