@@ -28,23 +28,11 @@ The following diagram describes the high-level flow of ProcDrift:
 
 ```mermaid
 flowchart TD
-  A[procdrift] --> B{Mode}
-
-  B -->|init| I[Baseline]
-  I --> I1[Execution State<br/>Process identities]
-  I --> I2[Persistence & Configuration<br/>systemd, cron, shell, ssh]
-  I --> I3[Privilege & System State<br/>users, sudoers, suid, kernel]
-  I --> I4[Write baseline.json]
-
-  B -->|run| R[Current Snapshot]
-  R --> R1[Diff Execution<br/>New processes only]
-  R --> R2[Diff Persistence & Configuration]
-  R --> R3[Diff Privilege & System State]
-
-  R1 --> R4[Annotate New Processes<br/>parent, cwd, env, network]
-  R4 --> O[Report Diffs Only]
-  R2 --> O
-  R3 --> O
+  A[Baseline] --> C[Compare]
+  B[Current State] --> C
+  C --> D[Execution Drift]
+  C --> E[Persistence Drift]
+  C --> F[Privilege Drift]
 ```
 
 ---
