@@ -119,6 +119,38 @@ It does not attempt to determine whether activity is benign or malicious, and it
 
 ---
 
+## Sample Output
+
+```
+[*] Drift detected
+
+[Processes: new identities + annotations]
+- exe=/tmp/.x
+  cmd=./.x 9999
+  user=1000
+  flags=EXEC:SUSP_PATH,EXEC:HIDDEN_NAME,EXEC:WORLD_WRITABLE
+  start=2025-12-16 18:42:42 pid=5600 ppid=5474
+  cwd=/tmp
+  parent_exe=/usr/bin/bash
+  parent_cmd=-bash
+  parent_user=1000
+
+
+[Shell RC: unified diffs]
+
+--- /home/towelie/.bashrc (baseline)
++++ /home/towelie/.bashrc (current)
+@@ -116,6 +116,7 @@
+   fi
+ fi
+
++# New potentially malicious persistence entry
+
+ # Enables autocompletion of options for bashfuscator
+ #eval "$(/home/towelie/.local/bin/register-python-argcomplete bashfuscator)"
+```
+---
+
 ## When ProcDrift Is Useful
 
 - Establishing and validating a known-good host baseline
