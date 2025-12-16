@@ -154,7 +154,7 @@ It does not attempt to determine whether activity is benign or malicious, and it
 ## When ProcDrift Is Useful
 
 - Establishing and validating a known-good host baseline
-- Detecting unauthorized persistence
+- Identifying potentially unauthorized persistence
 - Investigating suspicious execution paths
 - Supporting incident response and post-compromise review
 - Verifying system integrity over time
