@@ -99,12 +99,14 @@ This allows operators to validate findings directly against the system.
 
 Initialize or overwrite the baseline:
 
+```
 python3 procdrift.py init
+```
 
 Compare current state to the baseline:
-
+```
 python3 procdrift.py run
-
+```
 Running as root is recommended for complete visibility, but ProcDrift will operate with reduced coverage when run unprivileged.
 
 ---
